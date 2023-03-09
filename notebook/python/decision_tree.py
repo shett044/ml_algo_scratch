@@ -18,8 +18,8 @@ class DecisionTree():
         def entropy(y):
             probs = np.bincount(y)/len(y)
             return -np.sum(p * np.log2(p) for p in probs if p > 0)
-            # return 1 - np.sum([p**2 for p in probs])
-            
+            # return 1 - np.sum([p**2 for p in probs]) # Gini index
+
         p_entropy = entropy(y)
         c_entropy = 0
         for yc in ygroups:
